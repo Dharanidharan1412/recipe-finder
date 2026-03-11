@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Recipe Finder</title>
+    <link rel="stylesheet" href="login_style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>🍳 Recipe Finder</h1>
+            <p>Login to discover delicious recipes</p>
+        </div>
+
+        <div class="error-message" id="errorMessage">
+            Invalid username or password. Please try again.
+        </div>
+        <div class="success-message" id="successMessage">
+            Account created successfully!
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    class="form-input" 
+                    placeholder="Enter your username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    class="form-input" 
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Login
+            </button>
+        </form>
+
+        <button class="btn btn-secondary" onclick="loginAsGuest()">
+            Continue as Guest
+        </button>
+
+        <div class="signup-section">
+            <p>Don't have an account?</p>
+            <button class="btn btn-primary" onclick="showSignup()">
+                Sign Up
+            </button>
+        </div>
+
+        <div class="demo-info">
+            <h4>Demo Credentials:</h4>
+            <p><strong>Username:</strong> admin</p>
+            <p><strong>Password:</strong> password</p>
+            <p>Or click "Continue as Guest" to skip login</p>
+        </div>
+
+        <!-- Signup Form (Hidden by default) -->
+        <div class="signup-form" id="signupForm" style="display: none;">
+            <h3>Create New Account</h3>
+            <div class="form-group">
+                <label for="newUsername">Username</label>
+                <input 
+                    type="text" 
+                    id="newUsername" 
+                    class="form-input" 
+                    placeholder="Choose a username"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    class="form-input" 
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Password</label>
+                <input 
+                    type="password" 
+                    id="newPassword" 
+                    class="form-input" 
+                    placeholder="Create a password"
+                    required
+                >
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    class="form-input" 
+                    placeholder="Confirm your password"
+                    required
+                >
+            </div>
+            <button type="button" class="btn btn-primary" onclick="handleSignup()">
+                Sign Up
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="showLogin()">
+                Back to Login
+            </button>
+        </div>
+    </div>
+
+    <script src="login_script.js"></script>
+</body>
+</html>

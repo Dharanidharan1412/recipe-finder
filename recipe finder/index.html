@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder - Discover Delicious Recipes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 Recipe Finder</h1>
+            <p>Discover delicious recipes based on ingredients you have</p>
+        </header>
+
+        <section class="search-section">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="Enter ingredients (e.g., chicken, tomato, rice)"
+                    autocomplete="off"
+                >
+                <button class="btn btn-primary" id="searchBtn">Search Recipes</button>
+                <button class="btn btn-secondary" id="clearBtn">Clear</button>
+            </div>
+            
+            <div class="filters">
+                <select class="filter-select" id="cuisineFilter">
+                    <option value="">All Cuisines</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="American">American</option>
+                </select>
+                
+                <select class="filter-select" id="sortBy">
+                    <option value="name">Sort by Name</option>
+                    <option value="time">Sort by Time</option>
+                    <option value="difficulty">Sort by Difficulty</option>
+                </select>
+
+                <label style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="favoritesOnly">
+                    <span>Show favorites only</span>
+                </label>
+            </div>
+        </section>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Searching for delicious recipes...</p>
+        </div>
+
+        <main class="recipes-grid" id="recipesGrid"></main>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <h3>No recipes found</h3>
+            <p>Try different ingredients or browse all recipes</p>
+        </div>
+    </div>
+
+    <!-- Navigation buttons in top right -->
+    <div class="auth-buttons">
+        <a href="home.html" class="auth-btn" onclick="window.location.href='home.html'; return false;">
+            🏠 Home
+        </a>
+        <button class="auth-btn" onclick="handleLogout()">
+            � Logout
+        </button>
+    </div>
+
+    <button class="favorites-toggle" id="favoritesToggle" title="Toggle Favorites">
+        ⭐
+    </button>
+
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header" id="modalHeader"></div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+    // Check if user is logged in
+    if (sessionStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = 'login.html';
+    }
+
+    // Handle logout functionality
+    function handleLogout() {
+        // Clear session storage
+        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.removeItem('username');
+        
+        // Optional: Clear favorites if needed
+        // localStorage.removeItem('recipeFavorites');
+        
+        // Redirect to login page
+        window.location.href = 'login.html';
+    }
+
+    // Handle navigation button clicks
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle Home button click
+        const homeBtn = document.querySelector('a[href="home.html"]');
+        if (homeBtn) {
+            homeBtn.addEventListener('click', function(e) {
+                console.log('Home button clicked');
+                // Allow default navigation
+            });
+        }
+
+        // Handle Login button click (now logout)
+        const logoutBtn = document.querySelector('button[onclick="handleLogout()"]');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function(e) {
+                console.log('Logout button clicked');
+            });
+        }
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

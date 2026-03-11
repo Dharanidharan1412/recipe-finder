@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Recipe Finder</title>
+    <link rel="stylesheet" href="home_style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 Recipe Finder</h1>
+            <p>Your personal cooking companion</p>
+        </header>
+
+        <div class="welcome-section" id="welcomeSection" style="display: none;">
+            <h2>Welcome Back!</h2>
+            <p>Continue your culinary journey with delicious recipes tailored to your preferences.</p>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">👤</div>
+                <div>
+                    <strong id="welcomeUsername">User</strong>
+                    <p style="margin: 5px 0; font-size: 0.9rem;">Ready to cook something amazing?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Poster Section -->
+        <section class="hero-poster">
+            <div class="hero-decoration hero-decoration-1">🍳</div>
+            <div class="hero-decoration hero-decoration-2">🍕</div>
+            <div class="hero-content">
+                <h1 class="hero-title">🍽️ Recipe Finder</h1>
+                <p class="hero-subtitle">Discover delicious recipes from around the world. Search by ingredients, save your favorites, and cook amazing meals every day!</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">🔍</span>
+                        <span class="hero-feature-text">Smart Search</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">⭐</span>
+                        <span class="hero-feature-text">Save Favorites</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">🌍</span>
+                        <span class="hero-feature-text">World Cuisines</span>
+                    </div>
+                    <div class="hero-feature">
+                        <span class="hero-feature-icon">📱</span>
+                        <span class="hero-feature-text">Mobile Ready</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nav-section">
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-btn nav-btn-primary">
+                    🍽️ Browse Recipes
+                </a>
+                <button class="nav-btn nav-btn-outline" onclick="showFavorites()">
+                    ⭐ My Favorites
+                </button>
+            </div>
+        </section>
+
+        <!-- Login/Signup buttons in top right -->
+        <div class="auth-buttons">
+            <a href="login.html" class="auth-btn">
+                👤 Login / Sign Up
+            </a>
+        </div>
+
+        <section class="features-section">
+            <div class="feature-card" onclick="showFeatureModal('smart-search')">
+                <div class="feature-icon">🔍</div>
+                <h3 class="feature-title">Smart Search</h3>
+                <p class="feature-description">Find recipes by ingredients you have at home. Multiple ingredient support for perfect matches.</p>
+            </div>
+            <div class="feature-card" onclick="showFeatureModal('world-cuisines')">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title">World Cuisines</h3>
+                <p class="feature-description">Explore recipes from Indian, Italian, Chinese, Mexican, and American cuisines.</p>
+            </div>
+            <div class="feature-card" onclick="showFeatureModal('save-favorites')">
+                <div class="feature-icon">⭐</div>
+                <h3 class="feature-title">Save Favorites</h3>
+                <p class="feature-description">Keep your loved recipes organized and accessible anytime with one-click saving.</p>
+            </div>
+            <div class="feature-card" onclick="showFeatureModal('mobile-friendly')">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Mobile Friendly</h3>
+                <p class="feature-description">Perfect responsive design that works seamlessly on all your devices.</p>
+            </div>
+            <div class="feature-card" onclick="showFeatureModal('easy-filtering')">
+                <div class="feature-icon">🎯</div>
+                <h3 class="feature-title">Easy Filtering</h3>
+                <p class="feature-description">Sort by time, difficulty, or cuisine to find exactly what you need.</p>
+            </div>
+            <div class="feature-card" onclick="showFeatureModal('detailed-instructions')">
+                <div class="feature-icon">📖</div>
+                <h3 class="feature-title">Detailed Instructions</h3>
+                <p class="feature-description">Step-by-step cooking instructions with ingredients lists and cooking times.</p>
+            </div>
+        </section>
+
+        <!-- Feature Modal -->
+        <div class="feature-modal" id="featureModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeFeatureModal()">✕</button>
+                <div class="modal-header">
+                    <div class="modal-icon" id="modalIcon">🔍</div>
+                    <h2 class="modal-title" id="modalTitle">Feature Title</h2>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Favorites Section (Hidden by default) -->
+        <section class="favorites-section" id="favoritesSection" style="display: none;">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--dark-color);">⭐ My Favorite Recipes</h2>
+            <div class="favorites-grid" id="favoritesGrid">
+                <!-- Favorites will be loaded here -->
+            </div>
+            <div class="no-favorites" id="noFavorites" style="display: none; text-align: center; padding: 40px;">
+                <h3 style="color: var(--text-light); margin-bottom: 15px;">No favorites yet!</h3>
+                <p style="color: var(--text-light);">Start exploring and save your favorite recipes to see them here.</p>
+                <button class="nav-btn nav-btn-primary" onclick="hideFavorites()" style="margin-top: 20px;">
+                    🍽️ Browse Recipes
+                </button>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <h2 style="text-align: center; margin-bottom: 20px; color: var(--dark-color);">Recipe Collection</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Delicious Recipes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Cuisine Types</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Offline Ready</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">🥘</div>
+                    <div class="stat-label">Beginner Friendly</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="home_script.js"></script>
+</body>
+</html>
