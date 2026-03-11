@@ -8,7 +8,7 @@ This project is built using HTML, CSS, and JavaScript and works completely on th
 
 ## ✨ Features
 
-🔐 User Login System
+### 🔐 User Login System
 
 Simple login authentication
 
@@ -16,7 +16,7 @@ Guest login option
 
 Demo credentials available
 
-🏠 Home Page
+### 🏠 Home Page
 
 Personalized welcome message
 
@@ -24,13 +24,13 @@ Feature overview
 
 Navigation to recipe search
 
-🔍 Ingredient-Based Recipe Search
+### 🔍 Ingredient-Based Recipe Search
 
 Enter available ingredients
 
 Find recipes that match those ingredients
 
-🍽 Recipe Details
+### 🍽 Recipe Details
 
 Cooking time
 
@@ -40,13 +40,13 @@ Ingredients list
 
 Step-by-step instructions
 
-⭐ Favorites System
+### ⭐ Favorites System
 
 Save favorite recipes
 
 Filter recipes to show favorites only
 
-🎛 Filters and Sorting
+### 🎛 Filters and Sorting
 
 Filter by cuisine (Indian, Italian, Chinese, etc.)
 
@@ -58,7 +58,7 @@ Cooking Time
 
 Difficulty
 
-🎨 Modern UI
+### 🎨 Modern UI
 
 Responsive layout
 
@@ -110,7 +110,7 @@ Run login.html or index.html in a web browser.
 Example:
 
 Right Click → Open with Browser
-🔑 Demo Login Credentials
+## 🔑 Demo Login Credentials
 
 You can use the following demo accounts:
 
@@ -121,24 +121,24 @@ guest	guest
 
 Or click Continue as Guest.
 
-📸 Screens (Suggested)
+## 📸 Screens 
 
-You can add screenshots here:
+### Login Page
+<img width="1915" height="910" alt="image" src="https://github.com/user-attachments/assets/7b57c334-0018-4465-99af-848fae42fd4b" />
 
-Login Page
 
-Home Page
+### Home Page
+<img width="1911" height="891" alt="image" src="https://github.com/user-attachments/assets/eca31176-9e6e-4020-a940-60271367166c" />
 
-Recipe Search
+
+### Recipe Search
+<img width="1913" height="916" alt="image" src="https://github.com/user-attachments/assets/a94de147-c426-4e58-a45e-b2d498dde9e3" />
+
 
 Recipe Details
 
-Example:
 
-screenshots/login.png
-screenshots/home.png
-screenshots/search.png
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Add API-based recipes (Spoonacular API)
 
